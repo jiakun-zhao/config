@@ -1,0 +1,59 @@
+{
+  "name": "@jiakun-zhao/config",
+  "version": "0.0.0",
+  "description": "MY CONFIG.",
+  "homepage": "https://github.com/jiakun-zhao/config#readme",
+  "bugs": {
+    "url": "https://github.com/jiakun-zhao/config/issues"
+  },
+  "license": "MIT",
+  "author": "Jiakun Zhao <hi@zhaojiakun.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiakun-zhao/config.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "fmt": "pnpm build && oxfmt --check",
+    "fmt:fix": "pnpm build && oxfmt",
+    "lint": "pnpm build && oxlint",
+    "lint:fix": "pnpm build && oxlint --fix",
+    "prepublishOnly": "pnpm build",
+    "release": "bumpp && pnpm publish && pnpx cnpm sync @jiakun-zhao/config"
+  },
+  "dependencies": {
+    "defu": "^6.1.7"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "bumpp": "^11.0.1",
+    "oxfmt": "^0.46.0",
+    "oxlint": "^1.61.0",
+    "oxlint-tsgolint": "^0.21.1",
+    "tsdown": "^0.21.10",
+    "typescript": "^6.0.3"
+  },
+  "peerDependencies": {
+    "oxfmt": "^0.46.0",
+    "oxlint": "^1.61.0",
+    "oxlint-tsgolint": "^0.21.1"
+  },
+  "optionalDependencies": {
+    "oxfmt": "^0.46.0",
+    "oxlint": "^1.61.0",
+    "oxlint-tsgolint": "^0.21.1"
+  }
+}
