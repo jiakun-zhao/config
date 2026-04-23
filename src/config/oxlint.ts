@@ -3,10 +3,10 @@ import type { OxlintConfig } from 'oxlint'
 export const oxlintConfig: OxlintConfig = {
   categories: {
     correctness: 'error',
-    perf: 'warn',
-    restriction: 'warn',
-    style: 'warn',
-    suspicious: 'warn',
+    perf: 'error',
+    restriction: 'error',
+    style: 'error',
+    suspicious: 'error',
   },
   options: {
     typeAware: true,
@@ -32,5 +32,6 @@ export const oxlintConfig: OxlintConfig = {
     'import/no-named-export': 'off',
     'import/prefer-default-export': 'off',
     'typescript/ban-types': 'error',
+    'unicorn/prefer-node-protocol': 'error',
   },
 }
