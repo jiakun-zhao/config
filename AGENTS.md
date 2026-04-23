@@ -6,25 +6,22 @@
 
 ## Commands
 
-- `pnpm build` — tsdown (bundles `src/*.ts` → `dist/`)
-- `pnpm test` — vitest (no config file, uses defaults)
-- `pnpm dev` — `tsx src/index.ts`
+- `pnpm build` — tsdown (bundles `src/index.ts` → `dist/`)
+- `pnpm fmt` / `pnpm fmt:fix` — oxfmt format check / fix
+- `pnpm lint` / `pnpm lint:fix` — oxlint check / fix
 - Release: `pnpm run release` → bumpp + publish + cnpm sync
 
 ## Lint & format
 
-Two linters run in parallel:
-
-- **oxlint** — `.oxlintrc.json` (plugins: typescript, import, unicorn). Also consumes the exported rule sets from `src/oxlint/`.
-- **eslint** — `eslint.config.mjs` via `@jiakun-zhao/eslint-config`
-- **oxfmt** — formatter config exported from `src/index.ts`
+- **oxlint** — `oxlint.config.ts` (plugins: eslint, typescript, unicorn, oxc, import, jsdoc, jsx-a11y, node, promise, vitest). Uses `defineOxlintConfig()` exported from `src/index.ts`.
+- **oxfmt** — `oxfmt.config.ts`. Uses `defineOxfmtConfig()` exported from `src/index.ts`.
 
 ## Architecture
 
-- `src/index.ts` — exports `oxfmt` config object
-- `src/oxlint/*.ts` — exports typed oxlint rule config objects (one per plugin: import, typescript, unicorn)
-- `src/oxlint/*.rules.json` — static data listing all available oxlint rules per plugin (used as reference/catalog, not consumed at runtime)
-- `tsdown.config.ts` — entry glob `src/*.ts` means each top-level `.ts` file in `src/` becomes a separate build entry
+- `src/index.ts` — exports `defineOxfmtConfig()` and `defineOxlintConfig()` helper functions
+- `src/config/oxfmt.ts` — default oxfmt config object
+- `src/config/oxlint.ts` — default oxlint config object
+- `tsdown.config.ts` — entry `src/index.ts` → single build output
 
 ## Key conventions
 
