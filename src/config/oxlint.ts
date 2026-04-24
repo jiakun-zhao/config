@@ -77,6 +77,7 @@ export const oxlintConfig: OxlintConfig = {
     'unicorn/no-array-for-each': 'off',
     'unicorn/no-null': 'off',
     'unicorn/prefer-node-protocol': 'error',
+    'unicorn/relative-url-style': 'off',
     'vitest/no-importing-vitest-globals': 'off',
     'vitest/require-test-timeout': 'off',
   },

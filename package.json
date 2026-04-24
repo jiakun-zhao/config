@@ -26,7 +26,8 @@
     }
   },
   "scripts": {
-    "build": "tsdown",
+    "clone": "git submodule update --init --remote",
+    "build": "pnpm clone && tsdown",
     "fmt": "pnpm build && oxfmt --check",
     "fmt:fix": "pnpm build && oxfmt",
     "lint": "pnpm build && oxlint",

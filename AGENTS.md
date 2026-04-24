@@ -6,7 +6,8 @@
 
 ## Commands
 
-- `pnpm build` — tsdown (bundles `src/index.ts` → `dist/`)
+- `pnpm clone` — initialize and fetch git submodules
+- `pnpm build` — `pnpm clone` + tsdown (bundles `src/index.ts` → `dist/`, copies skills from submodules → `skills/`)
 - `pnpm fmt` / `pnpm fmt:fix` — oxfmt format check / fix
 - `pnpm lint` / `pnpm lint:fix` — oxlint check / fix
 - Release: `pnpm run release` → bumpp + publish + cnpm sync
@@ -22,6 +23,8 @@
 - `src/config/oxfmt.ts` — default oxfmt config object
 - `src/config/oxlint.ts` — default oxlint config object
 - `tsdown.config.ts` — entry `src/index.ts` → single build output
+- `repos/<owner>/<repo>/` — git submodules (upstream data sources)
+- `skills/<name>/` — skill files, copied from submodules via tsdown `copy` (tracked in git)
 
 ## Key conventions
 
