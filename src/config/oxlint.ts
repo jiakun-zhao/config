@@ -29,6 +29,7 @@ export const oxlintConfig: OxlintConfig = {
     'eslint/id-length': 'off',
     'eslint/max-statements': 'off',
     'eslint/no-await-in-loop': 'off',
+    'eslint/no-console': 'warn',
     'eslint/no-continue': 'off',
     'eslint/no-duplicate-imports': 'off',
     'eslint/no-magic-numbers': 'off',
@@ -41,7 +42,7 @@ export const oxlintConfig: OxlintConfig = {
     'eslint/no-use-before-define': ['warn', { classes: false, functions: false, variables: true }],
     'eslint/prefer-destructuring': 'off',
     'eslint/sort-imports': 'off',
-    'eslint/sort-keys': 'warn',
+    'eslint/sort-keys': 'off',
     'import/exports-last': 'off',
     'import/group-exports': 'off',
     'import/no-default-export': 'off',
@@ -81,4 +82,12 @@ export const oxlintConfig: OxlintConfig = {
     'vitest/no-importing-vitest-globals': 'off',
     'vitest/require-test-timeout': 'off',
   },
+  overrides: [
+    {
+      files: ['*.config.ts', '*.config.mts', '*.config.mjs', '*.config.js', '*.config.cjs'],
+      rules: {
+        'eslint/sort-keys': 'warn',
+      },
+    },
+  ],
 }
