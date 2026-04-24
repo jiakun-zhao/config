@@ -12,6 +12,14 @@ export const oxlintConfig: OxlintConfig = {
     typeAware: true,
     typeCheck: true,
   },
+  overrides: [
+    {
+      files: ['*.config.ts', '*.config.mts', '*.config.mjs', '*.config.js', '*.config.cjs'],
+      rules: {
+        'eslint/sort-keys': 'warn',
+      },
+    },
+  ],
   plugins: [
     'eslint',
     'typescript',
@@ -27,6 +35,7 @@ export const oxlintConfig: OxlintConfig = {
   rules: {
     'eslint/func-style': 'off',
     'eslint/id-length': 'off',
+    'eslint/init-declarations': 'off',
     'eslint/max-statements': 'off',
     'eslint/no-await-in-loop': 'off',
     'eslint/no-console': 'warn',
@@ -82,12 +91,4 @@ export const oxlintConfig: OxlintConfig = {
     'vitest/no-importing-vitest-globals': 'off',
     'vitest/require-test-timeout': 'off',
   },
-  overrides: [
-    {
-      files: ['*.config.ts', '*.config.mts', '*.config.mjs', '*.config.js', '*.config.cjs'],
-      rules: {
-        'eslint/sort-keys': 'warn',
-      },
-    },
-  ],
 }
