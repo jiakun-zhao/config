@@ -5,9 +5,9 @@ import { oxfmtConfig } from '~/config/oxfmt'
 import { oxlintConfig } from '~/config/oxlint'
 
 export function defineOxfmtConfig(config: OxfmtConfig = {}): OxfmtConfig {
-  return defu(oxfmtConfig, config)
+  return defu(config, oxfmtConfig)
 }
 
 export function defineOxlintConfig(config: OxlintConfig = {}): OxlintConfig {
-  return defu(oxlintConfig, config)
+  return defu(config, oxlintConfig)
 }
