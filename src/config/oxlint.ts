@@ -1,4 +1,5 @@
 import type { OxlintConfig } from 'oxlint'
+import { globExclude } from '~/config/oxc-glob-exclude'
 
 export const oxlintConfig: OxlintConfig = {
   categories: {
@@ -8,6 +9,7 @@ export const oxlintConfig: OxlintConfig = {
     style: 'error',
     suspicious: 'error',
   },
+  ignorePatterns: globExclude,
   options: {
     typeAware: true,
     typeCheck: true,
