@@ -60,6 +60,7 @@ export const oxlintConfig: OxlintConfig = {
         allowTernary: true,
       },
     ],
+    'eslint/no-unused-vars': 'warn',
     'eslint/no-use-before-define': [
       'warn',
       {
