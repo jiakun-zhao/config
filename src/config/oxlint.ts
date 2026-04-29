@@ -41,7 +41,12 @@ export const oxlintConfig: OxlintConfig = {
     'eslint/init-declarations': 'off',
     'eslint/max-statements': 'off',
     'eslint/no-await-in-loop': 'off',
-    'eslint/no-console': ['warn', { allow: ['warn', 'error'] }],
+    'eslint/no-console': [
+      'warn',
+      {
+        allow: ['warn', 'error'],
+      },
+    ],
     'eslint/no-continue': 'off',
     'eslint/no-duplicate-imports': 'off',
     'eslint/no-magic-numbers': 'off',
@@ -49,9 +54,20 @@ export const oxlintConfig: OxlintConfig = {
     'eslint/no-ternary': 'off',
     'eslint/no-unused-expressions': [
       'warn',
-      { allowShortCircuit: true, allowTaggedTemplates: true, allowTernary: true },
+      {
+        allowShortCircuit: true,
+        allowTaggedTemplates: true,
+        allowTernary: true,
+      },
     ],
-    'eslint/no-use-before-define': ['warn', { classes: false, functions: false, variables: true }],
+    'eslint/no-use-before-define': [
+      'warn',
+      {
+        classes: false,
+        functions: false,
+        variables: true,
+      },
+    ],
     'eslint/prefer-destructuring': 'off',
     'eslint/sort-imports': 'off',
     'eslint/sort-keys': 'off',
@@ -64,6 +80,7 @@ export const oxlintConfig: OxlintConfig = {
     'import/no-unassigned-import': 'off',
     'import/prefer-default-export': 'off',
     'import/unambiguous': 'off',
+    'jest/prefer-expect-assertions': 'off',
     'jest/prefer-strict-equal': 'off',
     'jest/require-hook': 'off',
     'jest/valid-title': 'off',
@@ -98,6 +115,7 @@ export const oxlintConfig: OxlintConfig = {
     'unicorn/prefer-node-protocol': 'error',
     'unicorn/relative-url-style': 'off',
     'vitest/no-importing-vitest-globals': 'off',
+    'vitest/prefer-expect-assertions': 'off',
     'vitest/require-test-timeout': 'off',
   },
 }
