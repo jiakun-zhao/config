@@ -21,6 +21,12 @@ export const oxlintConfig: OxlintConfig = {
         'eslint/sort-keys': 'warn',
       },
     },
+    {
+      files: ['!**/*.test.ts'],
+      rules: {
+        'vitest/require-hook': 'off',
+      },
+    },
   ],
   plugins: [
     'eslint',
@@ -52,6 +58,7 @@ export const oxlintConfig: OxlintConfig = {
     'eslint/no-magic-numbers': 'off',
     'eslint/no-shadow': 'off',
     'eslint/no-ternary': 'off',
+    'eslint/no-undefined': 'off',
     'eslint/no-unused-expressions': [
       'warn',
       {
@@ -108,6 +115,7 @@ export const oxlintConfig: OxlintConfig = {
     'typescript/no-explicit-any': 'off',
     'typescript/no-floating-promises': 'off',
     'typescript/no-inferrable-types': 'off',
+    'typescript/no-non-null-assertion': 'off',
     'typescript/no-unsafe-type-assertion': 'off',
     'typescript/promise-function-async': 'off',
     'unicorn/no-array-for-each': 'off',
