@@ -1,6 +1,27 @@
 import type { OxlintConfig } from 'oxlint'
 import { globExclude } from '~/config/oxc-glob-exclude'
 
+export const oxlintReactConfig: OxlintConfig = {
+  plugins: ['react', 'react-perf', 'jsx-a11y'],
+  rules: {
+    'jsx-a11y/no-autofocus': 'off',
+    'react-perf/jsx-no-jsx-as-prop': 'off',
+    'react-perf/jsx-no-new-array-as-prop': 'off',
+    'react-perf/jsx-no-new-object-as-prop': 'off',
+    'react/forbid-component-props': 'off',
+    'react/jsx-boolean-value': 'off',
+    'react/jsx-filename-extension': 'off',
+    'react/jsx-max-depth': 'off',
+    'react/jsx-props-no-spreading': 'off',
+
+    'react/no-multi-comp': 'off',
+    'react/no-unknown-property': 'off',
+    'react/only-export-components': 'off',
+
+    'react/react-in-jsx-scope': 'off',
+  },
+}
+
 export const oxlintConfig: OxlintConfig = {
   categories: {
     correctness: 'error',
@@ -22,24 +43,29 @@ export const oxlintConfig: OxlintConfig = {
       },
     },
     {
-      files: ['!**/*.test.ts'],
+      files: ['**/*.{test,spec}.{ts,tsx,js,jsx}', '**/__tests__/**/*.{ts,tsx,js,jsx}'],
+      plugins: ['jest', 'vitest'],
       rules: {
-        'vitest/require-hook': 'off',
+        'jest/prefer-expect-assertions': 'off',
+        'jest/prefer-strict-equal': 'off',
+        'jest/require-hook': 'off',
+        'jest/valid-title': 'off',
+        'vitest/no-importing-vitest-globals': 'off',
+        'vitest/prefer-expect-assertions': 'off',
+        'vitest/prefer-strict-boolean-matchers': 'off',
+        'vitest/prefer-to-be-falsy': 'off',
+        'vitest/require-test-timeout': 'off',
+      },
+    },
+    {
+      files: ['**/routeTree.gen.ts'],
+      rules: {
+        'unicorn/filename-case': 'off',
+        'unicorn/no-abusive-eslint-disable': 'off',
       },
     },
   ],
-  plugins: [
-    'eslint',
-    'typescript',
-    'unicorn',
-    'oxc',
-    'import',
-    'jsdoc',
-    'jsx-a11y',
-    'node',
-    'promise',
-    'vitest',
-  ],
+  plugins: ['eslint', 'typescript', 'unicorn', 'oxc', 'import', 'jsdoc', 'node', 'promise'],
   rules: {
     'eslint/capitalized-comments': 'off',
     'eslint/func-style': 'off',
@@ -55,6 +81,7 @@ export const oxlintConfig: OxlintConfig = {
     ],
     'eslint/no-continue': 'off',
     'eslint/no-duplicate-imports': 'off',
+    'eslint/no-empty-function': 'warn',
     'eslint/no-magic-numbers': 'off',
     'eslint/no-shadow': 'off',
     'eslint/no-ternary': 'off',
@@ -88,10 +115,6 @@ export const oxlintConfig: OxlintConfig = {
     'import/no-unassigned-import': 'off',
     'import/prefer-default-export': 'off',
     'import/unambiguous': 'off',
-    'jest/prefer-expect-assertions': 'off',
-    'jest/prefer-strict-equal': 'off',
-    'jest/require-hook': 'off',
-    'jest/valid-title': 'off',
     'oxc/no-async-await': 'off',
     'oxc/no-async-endpoint-handlers': 'off',
     'oxc/no-optional-chaining': 'off',
@@ -123,8 +146,5 @@ export const oxlintConfig: OxlintConfig = {
     'unicorn/no-null': 'off',
     'unicorn/prefer-node-protocol': 'error',
     'unicorn/relative-url-style': 'off',
-    'vitest/no-importing-vitest-globals': 'off',
-    'vitest/prefer-expect-assertions': 'off',
-    'vitest/require-test-timeout': 'off',
   },
 }
