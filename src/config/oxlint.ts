@@ -119,6 +119,7 @@ export const oxlintConfig: OxlintConfig = {
     'oxc/no-async-endpoint-handlers': 'off',
     'oxc/no-optional-chaining': 'off',
     'oxc/no-rest-spread-properties': 'off',
+    'promise/always-return': 'off',
     'promise/catch-or-return': 'off',
     'promise/prefer-await-to-then': 'off',
     'typescript/ban-types': 'error',
