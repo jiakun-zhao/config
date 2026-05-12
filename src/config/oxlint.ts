@@ -146,6 +146,7 @@ export const oxlintConfig: OxlintConfig = {
     'unicorn/no-array-for-each': 'off',
     'unicorn/no-array-reduce': 'off',
     'unicorn/no-null': 'off',
+    'unicorn/prefer-global-this': 'off',
     'unicorn/prefer-module': 'off',
     'unicorn/prefer-node-protocol': 'error',
     'unicorn/relative-url-style': 'off',
